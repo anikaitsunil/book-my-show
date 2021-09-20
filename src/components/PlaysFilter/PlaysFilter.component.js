@@ -9,7 +9,7 @@ const PlaysFilter = (props) => {
             <>
             <Disclosure.Button className="py-1 flex items-center gap-3 mb-3">
                 {open ? <BiChevronUp /> : <BiChevronDown />}
-                <span className={open? "text-red-600" : "text-gray-700"}>
+                <span className={open? "text-red-600" : "text-gray-700 text-sm"}>
                 {props.title}
                 </span>
             </Disclosure.Button>

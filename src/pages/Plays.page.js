@@ -1,8 +1,22 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Poster from "../components/Poster/poster.component";
 import PlaysFilter from "../components/PlaysFilter/PlaysFilter.component";
+import axios from "axios";
 
 const Plays = () => {
+
+    const [popularMovies, setPopularMovies] = useState([]);
+
+    useEffect(() => {
+        const requestPopularMovies = async() => {
+            const getPopularMovies = await axios.get("/movie/now_playing");
+            setPopularMovies(getPopularMovies.data.results);
+        };
+        requestPopularMovies();
+    },[]);
+
+    console.log({popularMovies});
+
     return (
         <>
         <div className="container mx-auto px-4">
@@ -12,52 +26,52 @@ const Plays = () => {
                     <div className="flex flex-wrap">
                         <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />
                         </div>
                         <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />
                         </div><div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />
                         </div><div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />
                         </div><div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />
                         </div><div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />
                         </div>
                         <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />
                         </div>
                         <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
                             <Poster 
-                            src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxOSBTZXA%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314534-ktzzmvqrht-portrait.jpg"
+                            src={popularMovies}
                             title="Tvk Cultural presents Ponniyin Selvan"
                             subtitle="Tamil ₹300"
                             />

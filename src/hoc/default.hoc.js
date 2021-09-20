@@ -1,7 +1,7 @@
 //Transforms component into another component
 //Adding aditional functionalities to the existing components
 
-import React, { Component } from "react";
+import React, {Component} from "react";
 import { Route } from "react-router-dom";
 
 //Layouts
